@@ -1,0 +1,17 @@
+[Unit]
+Description=Nexus Prover Node
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/nexus-node run --datadir /root/.nexus
+Restart=always
+RestartSec=5
+LimitNOFILE=65536
+StandardOutput=append:/var/log/nexus-node.log
+StandardError=append:/var/log/nexus-node.log
+
+[Install]
+WantedBy=multi-user.target

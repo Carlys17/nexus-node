@@ -1,0 +1,27 @@
+datadir = "/root/.nexus"
+network  = "testnet"
+
+[prover]
+key      = "/root/.nexus/prover.key"
+moniker  = "carlys-prover"
+fee_addr = "0x0000000000000000000000000000000000000000"
+
+[rpc]
+listen = "127.0.0.1:7333"
+user   = "nexus"
+password = "CHANGE_ME"
+
+[p2p]
+listen   = "0.0.0.0:7334"
+seeds = [
+  "seed-1.testnet.nexus.network:7334",
+  "seed-2.testnet.nexus.network:7334",
+]
+peers_max = 50
+
+[telemetry]
+prometheus_listen = "127.0.0.1:9100"
+
+[log]
+level = "info"
+file  = "/var/log/nexus-node.log"
